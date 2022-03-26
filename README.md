@@ -69,8 +69,10 @@ from pytholic.variety import trinity
 trinity()
 ```
 
+For more information, access https://pytholic.readthedocs.io/
+
 ## Contribute please 🇻🇦
 
-As I said, this project was made as a form of penance, there's nothing special on it, but it can be improved. So if you are a catholic and a developer, please, consider helping this small project become something really great.
+As I said, this project was made as a form of penance, there's nothing special on it, but it can be improved. So if you are a catholic and a developer, please, consider helping this small project.
 
 # *Viva Cristo Rei!*
