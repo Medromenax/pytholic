@@ -10,7 +10,7 @@ with open(path.join(HERE, 'README.md'), encoding='utf-8') as f:
 
 setup(
     name="pytholic",
-    version="1.0.0",
+    version="1.0.1",
     description="Catholic-themed library",
     long_description=long_description,
     long_description_content_type="text/markdown",
