@@ -67,20 +67,20 @@ The cool stuff :D
 def sanctify(text: str) -> str:
     """It turns a given string into a latin-like version.
 
-    The letter "u" is swapped by "v", normal numbers are swapped by roman
-    numbers, all letters are capitalized.
+    The letter "u" is swapped by "v", normal numbers are swapped by roman numbers, all letters are capitalized.
 
-    :param text: The string to be formatted
+    :param text: The string to be formatted.
     :type text: str
-
-    :return: The given string, but with capital letters, v instead of u and
-    roman numbers instead of normal numbers
+    :return: The given string, but with capital letters, v instead of u and roman numbers instead of normal numbers.
     :rtype: str
+    :raises TypeError: If a value other than a string is passed as parameter.
+    :raises UnholyWordError: If the string contains the words: satan, demon, baphomet, lucifer, 666 or devil.
+    :raises NumberTooBig: If a number is greater than 9999.
 
-    :raises TypeError: If a value other than a string is passed as parameter
-    :raises UnholyWordError: If the string contains the words: satan, demon,
-    baphomet, lucifer, 666 or devil.
-    :raises NumberTooBig: If a number is greater than 9999
+    >>> text = "Hello World!, i'm 99 years old, good luck"
+    >>> text = sanctify(text)
+    >>> print(text)
+    HELLO WORLD!, I'M XCIX YEARS OLD, GOOD LVCK
     """
     if type(text) != str:
         raise TypeError
@@ -120,7 +120,7 @@ def sanctify(text: str) -> str:
 def trinity():
     """
     Explanation of the doctrine of the Holy Trinity through an interactive
-    little game
+    little game.
     """
     while True:
         question1 = input(
@@ -152,3 +152,8 @@ def trinity():
             print("Type only y or n")
             _time.sleep(1)
             continue
+
+
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()

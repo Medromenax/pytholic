@@ -1,43 +1,27 @@
-from pytholic.bible._exceptions import ChapterDoesntExistError, VerseDoesntExistError, StartVerseGreaterThanEndOneError, ChapterAndVerseMustBeIntError, EndVerseEqualToStartOne
+from pytholic.bible._exceptions import ChapterDoesntExistError, VerseDoesntExistError, StartVerseGreaterThanEndOneError, ChapterAndVerseMustBeIntError, EndVerseEqualToStartOneError
 from typing import Union
 
 
 def get_text(chapter_list, chapter, verse_start, verse_end, maxc):
     """Receives the parameters passed to the Bible class
 
-    :param chapter_list: List that contains all chapters of each of the
-    gospels
+    :param chapter_list: List that contains all chapters of each of the gospels
     :type chapter_list: dict
-
-    :param chapter: Dictionary that contains all verses of a specified
-    chapter
+    :param chapter: Dictionary that contains all verses of a specified chapter
     :type chapter: dict
-
-    :param verse_start: It can be the verse or the start verse if a end
-    verse is passed
+    :param verse_start: It can be the verse or the start verse if an end verse is passed
     :type verse_start: int
-
     :param verse_end: The end verse if a start verse is passed
     :type verse_end: int
-
-    :param maxc: The last chapter of a book, so we can prevent an empty
-    list or string
+    :param maxc: The last chapter of a book, so we can prevent an empty list or string
     :type maxc: int
-
-    :return: The verse if only one verse is passed or a list of verses if
-    a start verse and an end verse is passed
-    :rtype: str or list
-
-    :raises ChapterAndVerseMustBeIntError: If either the chapter or the
-    verse isn't an int
-    :raises ChapterDoesntExistErro: If the chapter passed as a parameter
-    isn't in the chapter list
-    :raises StartVerseGreaterThanEndOneError: If the start verse if greater
-    than the end verse
-    :raises VerseDoesntExistError: If the verse passed as a parameter isn't
-    in the verse dictionary
-    :raises EndVerseEqualToStartOne: If the end verse and the start verse
-    have the same value
+    :return: The verse if only one verse is passed or a list of verses if a start verse and an end verse is passed
+    :rtype: str or list[str]
+    :raises ChapterAndVerseMustBeIntError: If either the chapter or the verse isn't an int
+    :raises ChapterDoesntExistError: If the chapter passed as a parameter isn't in the chapter list
+    :raises StartVerseGreaterThanEndOneError: If the start verse if greater than the end verse
+    :raises VerseDoesntExistError: If the verse passed as a parameter isn't in the verse dictionary
+    :raises EndVerseEqualToStartOneError: If the end verse and the start verse have the same value
     """
     if type(chapter) != int or type(verse_start) != int:
         raise ChapterAndVerseMustBeIntError
@@ -52,7 +36,7 @@ def get_text(chapter_list, chapter, verse_start, verse_end, maxc):
         if verse_start > verse_end:
             raise StartVerseGreaterThanEndOneError
         if verse_start == verse_end:
-            raise EndVerseEqualToStartOne
+            raise EndVerseEqualToStartOneError
 
     if verse_end == None:
         for chapter_num, chapter_content in chapter_list.items():
@@ -81,15 +65,11 @@ class BibleBooks:
     """Contains the 4 gospels of the Bible"""
 
     def matthew(self, chapter: int, verse_start: int, verse_end: int = None) -> Union[str, list]:
-        """
-        :param chapter: The chapter number
+        """:param chapter: The chapter number
         :type chapter: int
-
         :param verse_start: The first verse
         :type verse_start: int
-
-        :param verse_end: Alternatively, an end verse can be passed or let it
-        as None to return only one verse
+        :param verse_end: Alternatively, an end verse can be passed or let it as None to return only one verse
         :type verse_end: int or None
         """
         chapter_1 = {
@@ -1280,15 +1260,11 @@ class BibleBooks:
         return get_text(chapters, chapter, verse_start, verse_end, 28)
 
     def mark(self, chapter: int, verse_start: int, verse_end: int = None) -> Union[str, list]:
-        """
-        :param chapter: The chapter number
+        """:param chapter: The chapter number
         :type chapter: int
-
         :param verse_start: The first verse
         :type verse_start: int
-
-        :param verse_end: Alternatively, an end verse can be passed or let it
-        as None to return only one verse
+        :param verse_end: Alternatively, an end verse can be passed or let it as None to return only one verse
         :type verse_end: int or None
         """
         chapter_1 = {
@@ -2039,15 +2015,11 @@ class BibleBooks:
         return get_text(chapters, chapter, verse_start, verse_end, 16)
 
     def luke(self, chapter: int, verse_start: int, verse_end: int = None) -> Union[str, list]:
-        """
-        :param chapter: The chapter number
+        """:param chapter: The chapter number
         :type chapter: int
-
         :param verse_start: The first verse
         :type verse_start: int
-
-        :param verse_end: Alternatively, an end verse can be passed or let it
-        as None to return only one verse
+        :param verse_end: Alternatively, an end verse can be passed or let it as None to return only one verse
         :type verse_end: int or None
         """
         chapter_1 = {
@@ -3303,15 +3275,11 @@ class BibleBooks:
         return get_text(chapters, chapter, verse_start, verse_end, 24)
 
     def john(self, chapter: int, verse_start: int, verse_end: int = None) -> Union[str, list]:
-        """
-        :param chapter: The chapter number
+        """:param chapter: The chapter number
         :type chapter: int
-
         :param verse_start: The first verse
         :type verse_start: int
-
-        :param verse_end: Alternatively, an end verse can be passed or let it
-        as None to return only one verse
+        :param verse_end: Alternatively, an end verse can be passed or let it as None to return only one verse
         :type verse_end: int or None
         """
         chapter_1 = {

@@ -1,6 +1,6 @@
 import unittest
 from pytholic.bible.bible import Bible
-from pytholic.bible._exceptions import ChapterDoesntExistError, VerseDoesntExistError, StartVerseGreaterThanEndOneError, ChapterAndVerseMustBeIntError, EndVerseEqualToStartOne
+from pytholic.bible._exceptions import ChapterDoesntExistError, VerseDoesntExistError, StartVerseGreaterThanEndOneError, ChapterAndVerseMustBeIntError, EndVerseEqualToStartOneError
 
 
 class TestBible(unittest.TestCase):
@@ -283,7 +283,7 @@ class TestBible(unittest.TestCase):
     def test_bible_end_verse_is_equal_to_start_verse_error(self):
         bible = Bible()
 
-        with self.assertRaises(EndVerseEqualToStartOne):
+        with self.assertRaises(EndVerseEqualToStartOneError):
             bible.matthew(1, 1, 1)
             bible.mark(1, 1, 1)
             bible.luke(1, 1, 1)

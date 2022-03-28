@@ -23,6 +23,6 @@ class ChapterAndVerseMustBeIntError(Exception):
         print("Chapter or verse must be Int.")
 
 
-class EndVerseEqualToStartOne(Exception):
+class EndVerseEqualToStartOneError(Exception):
     def __str__(self):
         print("End verse must not be equal to start verse.")
